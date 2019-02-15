@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    //<![CDATA[
+    function <?php echo $this->getLabel(); ?>ButtonRun() {
+        debugger;
+        document.getElementById('prodestransl-<?php echo $this->getLabel(); ?>-messages').innerHTML = "";
+        new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {
+            method:   'get',
+            type:     'json',
+            onSuccess: function(transport){
+
+                if (transport.responseText){
+                    var data = JSON.parse(transport.responseText);
+                    if(data.status){
+                        if(data.messages){
+                            document.getElementById('prodestransl-<?php echo $this->getLabel(); ?>-messages').innerHTML= data.messages;
+                        }
+                        alert(data.message);
+
+                    }else{
+                        alert("Unknown error");
+                    }
+                }
+            }
+        });
+    }
+    //]]>
+</script>
+
+<?php echo $this->getButtonHtml() ?>
+<div>
+    <p id="prodestransl-<?php echo $this->getLabel(); ?>-messages"></p>
+</div>

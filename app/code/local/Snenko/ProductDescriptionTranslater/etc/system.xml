@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <snenko translate="label" module="prodestransl">
+            <label>Snenko</label>
+            <sort_order>777</sort_order>
+        </snenko>
+    </tabs>
+    <sections>
+        <prodestransl translate="label" module="prodestransl">
+            <label>Productuct Description Translator</label>
+            <tab>snenko</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>777</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <export>
+                    <label>Export</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enabled By Cron</comment>
+                        </enabled>
+                        <catalog translate="label">
+                            <label>Dir To Export Files</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                            <comment>Cataog to export</comment>
+                        </catalog>
+                        <row_count translate="label">
+                            <label>Count product</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                            <comment>Count products when export by cron</comment>
+                        </row_count>
+                        <stores translate="label">
+                            <label>Stores</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>adminhtml/system_config_source_store</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </stores>
+                        <exclude_skus translate="label">
+                            <label>Exclude skus</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                            <comment>Example: sku1,sku2,sku3</comment>
+                        </exclude_skus>
+                        <visibility translate="label">
+                            <label>Visibility</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>prodestransl/system_config_source_visibility</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </visibility>
+                        <ignore_out_of_stock translate="label">
+                            <label>Ignore if out of stock</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                            <comment>Enabled By Cron</comment>
+                        </ignore_out_of_stock>
+                        <use_sku translate="label">
+                            <label>Use sku instead product-id</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                            <comment>Use sku instead product-id when create export file.</comment>
+                        </use_sku>
+                        <fields translate="label">
+                            <label>Fieds</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>prodestransl/system_config_source_attributes</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Fields to export</comment>
+                        </fields>
+                        <typetoexport translate="label">
+                            <label>Type To Export</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>prodestransl/system_config_source_typetoexport</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </typetoexport>
+
+                        <run translate="label">
+                            <label>Run export</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>prodestransl/adminhtml_system_config_form_button_export</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Runing export without Cron with settings from Cron now</comment>
+                        </run>
+                    </fields>
+                </export>
+                <import>
+                    <label>Import</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enabled By Cron</comment>
+                        </enabled>
+                        <catalog translate="label">
+                            <label>Catalog</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <!--<depends><enabled>1</enabled></depends>-->
+                            <comment>Cataog to export</comment>
+                        </catalog>
+                        <catalog_imported translate="label">
+                            <label>Catalog for imported file</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <!--<depends><enabled>1</enabled></depends>-->
+                            <comment>Cataog to export</comment>
+                        </catalog_imported>
+                        <run translate="label">
+                            <label>Run import</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>prodestransl/adminhtml_system_config_form_button_import</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Runing export without Cron with settings from Cron now</comment>
+                        </run>
+                        <!--<run_from_local translate="label">-->
+                            <!--<label>Load file and run import</label>-->
+                            <!--<frontend_type>button</frontend_type>-->
+                            <!--<frontend_model>prodestransl/adminhtml_system_config_form_button_import</frontend_model>-->
+                            <!--<sort_order>100</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                            <!--<comment>Load file for import and run import of this file</comment>-->
+                        <!--</run_from_local>-->
+                        <!--Varien_Data_Form_Element_File-->
+<!--
+                        // If $pFilename is php://output or php://stdout, make it a temporary file...
+                        $originalFilename = $pFilename;
+                        if (strtolower($pFilename) == 'php://output' || strtolower($pFilename) == 'php://stdout') {
+                        $pFilename = @tempnam(PHPExcel_Shared_File::sys_get_temp_dir(), 'phpxltmp');
+                        if ($pFilename == '') {
+                        $pFilename = $originalFilename;
+                        }
+                        }
+                        -->
+                    </fields>
+                </import>
+            </groups>
+        </prodestransl>
+    </sections>
+</config>

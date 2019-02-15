@@ -1,0 +1,5 @@
+"Productuct Description Translator","Перекладач Опису Продуктів"
+"Import Done","Імпорт Завершений"
+"Export Done","Експорт Завершений"
+"Results: count/success/error=<b>{$rowsCount}/{$successUpdated}/{$errorUpdated}</b> ",""
+"Export Product's Descriptions for Translate","Експорт Опис Продуктів Для Перкладу"

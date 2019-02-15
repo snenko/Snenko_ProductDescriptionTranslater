@@ -1,0 +1,24 @@
+table.logstatus {
+    border-collapse: collapse;
+}
+
+table.logstatus td.title {
+    font-weight: bold;
+}
+
+table.logstatus tr.updated {
+    color: green;
+}
+
+table.logstatus tr.error {
+    color: red;
+}
+
+table.logstatus tr.not-updated {
+    color: blue;
+}
+
+table.logstatus td {
+    border-bottom: 1px lightgray solid;
+    padding: 7px;
+}
